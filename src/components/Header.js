@@ -6,7 +6,7 @@ import Button from './Button'
 const Header = () => {
     return (
         <header>
-           <div className="row">
+           <div className="row flex">
                 <div className="col col-left">
                     <div className="logo-wrap">
                         <img src={logo} alt="Logo" />

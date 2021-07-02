@@ -2,20 +2,80 @@
 
 $font1 : 'Overpass', sans-serif;
 $font2 : 'Ubuntu', sans-serif;
+$primary-color1: hsl(356, 100%, 66%);
+$primary-color2: hsl(355, 100%, 74%);
+$headings-color: hsl(208, 49%, 24%);
+$neutral-color1: hsl(0, 0%, 100%);
+$footer-text-color: hsl(240, 2%, 79%);
+$body-copy: hsl(207, 13%, 34%);
+$footer-bg: hsl(240, 10%, 16%);
+
+@mixin btn-clr($bg, $clr){
+  background-color: $bg;
+  color: $clr;
+}
+
 
 *{
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  font-family: $font1;
+  font-family: $font2;
+  font-size: 1rem;
+  color: $body-copy;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+h1, h2, h3{
+  font-family: $font1;
+  color: $headings-color;
+}
+
+header{
+  background: center/auto no-repeat url(./images/bg-pattern-intro.svg), linear-gradient(hsl(13, 100%, 72%),hsl(353, 100%, 62%));
+  padding: 50px 20px 135px;
+  border-bottom-left-radius: 90px;
+
+  .banner{
+    margin-top: 100px;
+    text-align: center;
+
+    h1{
+      color: $neutral-color1;
+    }
+
+    .text-content{
+      margin-bottom: 40px;
+    }
+  }
+
+  nav{
+    display: none;
+  }
+}
+
+
+.btn-light{
+  @include btn-clr($neutral-color1, $primary-color1 );
+
+  &:hover{
+    @include btn-clr($primary-color2, $neutral-color1 );
+  }
+}
+
+.btn-transparent{
+  @include btn-clr(transparent, $neutral-color1);
+}
+
+.flex{
+  display: flex;
+  justify-content: space-between;
 }
 
 .section1{
   background-image: url(./images/illustration-editor-desktop.svg);
 }
+
+

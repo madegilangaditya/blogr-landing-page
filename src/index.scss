@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&family=Ubuntu:wght@400;500;700&display=swap');
+
+$font1 : 'Overpass', sans-serif;
+$font2 : 'Ubuntu', sans-serif;
+
+*{
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font1;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.section1{
+  background-image: url(./images/illustration-editor-desktop.svg);
+}

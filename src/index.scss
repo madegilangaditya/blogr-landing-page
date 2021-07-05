@@ -26,6 +26,7 @@ body {
   font-family: $font2;
   font-size: 1rem;
   color: $body-copy;
+  line-height: 1.4;
 }
 
 h1, h2, h3{
@@ -33,27 +34,53 @@ h1, h2, h3{
   color: $headings-color;
 }
 
+a{
+  text-decoration: none;
+}
+
+img{
+  width: 100%;
+}
+
 header{
-  background: center/auto no-repeat url(./images/bg-pattern-intro.svg), linear-gradient(hsl(13, 100%, 72%),hsl(353, 100%, 62%));
+  background: 35% 35%/350% no-repeat url(./images/bg-pattern-intro.svg), linear-gradient( #ff8f70, #ff3d54 );
   padding: 50px 20px 135px;
   border-bottom-left-radius: 90px;
 
+  .logo-wrap{
+    max-width: 73px;
+  }
+
   .banner{
-    margin-top: 100px;
+    margin-top: 80px;
     text-align: center;
 
     h1{
       color: $neutral-color1;
+      margin-bottom: 10px;
     }
 
     .text-content{
       margin-bottom: 40px;
+
+      p{
+        color: $neutral-color1;
+      }
     }
   }
 
   nav{
     display: none;
   }
+}
+
+.btn{
+  border-radius: 20px;
+  border: 1px solid $neutral-color1;
+  padding: 8px 10px;
+  margin: 0 7px;
+  font-weight: 700;
+  display: inline-block;
 }
 
 

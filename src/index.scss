@@ -23,15 +23,16 @@ $footer-bg: hsl(240, 10%, 16%);
 }
 
 body {
-  font-family: $font2;
-  font-size: 1rem;
+  font-family: $font1;
+  font-size: 0.875rem;
   color: $body-copy;
-  line-height: 1.4;
+  line-height: 1.65;
 }
 
 h1, h2, h3{
   font-family: $font1;
   color: $headings-color;
+  line-height: 1.15;
 }
 
 a{
@@ -40,6 +41,12 @@ a{
 
 img{
   width: 100%;
+}
+
+section{
+  text-align: center;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 header{
@@ -58,13 +65,15 @@ header{
     h1{
       color: $neutral-color1;
       margin-bottom: 10px;
+      line-height: 1.4;
     }
 
     .text-content{
       margin-bottom: 40px;
 
       p{
-        color: $neutral-color1;
+        color: $footer-text-color;
+        font-weight: 300;
       }
     }
   }
@@ -77,7 +86,7 @@ header{
 .btn{
   border-radius: 20px;
   border: 1px solid $neutral-color1;
-  padding: 8px 10px;
+  padding: 8px 15px;
   margin: 0 7px;
   font-weight: 700;
   display: inline-block;
@@ -94,6 +103,10 @@ header{
 
 .btn-transparent{
   @include btn-clr(transparent, $neutral-color1);
+
+  &:hover{
+    @include btn-clr($neutral-color1, $primary-color1 );
+  }
 }
 
 .flex{
@@ -101,8 +114,106 @@ header{
   justify-content: space-between;
 }
 
+.text-wrap{
+
+  h3{
+    font-size: 1.625rem;
+    line-height: 1.15;
+    margin-bottom: 20px;
+  }
+}
+
 .section1{
-  background-image: url(./images/illustration-editor-desktop.svg);
+  padding: 98px 0;
+
+  h2{
+    margin-bottom: 45px;
+    font-size: 1.4375rem;
+  }
+
+  .col-left{
+    padding: 0px 20px;
+  }
+
+  h3{
+    margin-top: 70px;
+  }
+  
+}
+
+.section2{
+  background: 50% -225px/515px no-repeat url(./images/bg-pattern-circles.svg), linear-gradient( hsl(237, 17%, 21%) 0%, hsl(237, 23%, 32%) 100%);
+  border-radius: 0px 90px 0px 90px;
+  margin-top: 50%;
+  padding-bottom: 100px;
+
+  img{
+    margin-top: -50%;
+  }
+
+  h2{
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: $neutral-color1;
+  }
+  
+  p{
+    color: $footer-text-color;
+  }
+}
+
+.section3{
+  
+  .row{
+    padding: 77px 0 80px;
+  }
+
+  h3{
+    margin-top: 50px;
+  }
+}
+
+footer{
+  background-color: $footer-bg;
+  padding: 65px 20px 20px;
+  text-align: center;
+  border-top-right-radius: 90px;
+
+  img{
+    margin-bottom: 75px;
+    max-width: 73px;
+  }
+
+  h4{
+    margin-bottom: 30px;
+    color: $neutral-color1;
+    font-family: $font2;
+  }
+
+  ul{
+    margin-bottom: 45px;
+  }
+
+  li{
+    list-style-type: none;
+    margin-bottom: 5px;
+
+    a{
+      color: $footer-text-color;
+      font-family: $font2;
+    }
+
+    &:hover a{
+      text-decoration: underline;
+    }
+  }
+}
+
+@media all and (min-width:800px){
+
+  .section1{
+    background-image: url(./images/illustration-editor-desktop.svg);
+  }
 }
 
 

@@ -78,7 +78,46 @@ header{
     }
   }
 
-  nav{
+  .menu-wrap{
+    display: none;
+    background:$neutral-color1;
+    border-radius:8px;
+    padding:35px 24px;
+  }
+
+  .menu-wrap.active{
+    display:block;
+    position:absolute;
+    width:100%;
+    left:0;
+    top: 55px;
+  }
+
+  .menu li{
+    list-style-type:none;
+    text-align:center;
+  
+  }
+  
+  .menu li a{
+    display:inline-block;
+    padding:13px 0px;
+    position:relative;
+    color: $body-copy;
+    font-weight: 600;
+  }
+
+  .menu li.has-child a:after {
+    content: ' ';
+    width: 10px;
+    background: no-repeat url(./images/icon-arrow-dark.svg);
+    position: absolute;
+    right: -15px;
+    height: 7px;
+    top: 21px;
+  }
+
+  .child-menu{
     display: none;
   }
 }
@@ -112,6 +151,7 @@ header{
 .flex{
   display: flex;
   justify-content: space-between;
+  position: relative;
 }
 
 .text-wrap{

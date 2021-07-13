@@ -1,9 +1,20 @@
 import logo from '../images/logo.svg'
 import mobileMenu from '../images/icon-hamburger.svg'
+import mobileMenuClose from '../images/icon-close.svg'
 import Banner from './Banner'
 import Button from './Button'
+import { useState } from 'react'
 
 const Header = () => {
+    const [openMenu, setOpenMenu] = useState(false)
+
+    const menuClicked = ()=>{
+        const menuOpen = document.querySelector('.menu-wrap');
+        
+        menuOpen.classList.toggle('active')
+        setOpenMenu(!openMenu)
+    }
+
     return (
         <header>
             <div className="container">
@@ -13,11 +24,11 @@ const Header = () => {
                             <img src={logo} alt="Logo" />
                         </div>
                     </div>
-                    <div className="col col-right">
-                        <div className="mobile-menu-icon">
-                            <img src={mobileMenu} alt="" />
-                        </div>
-                        <nav>
+                    <div className="mobile-menu-icon" onClick={menuClicked}>
+                        <img src={ !openMenu ? mobileMenu : mobileMenuClose} alt="" />
+                    </div>
+                    <div className="col col-right menu-wrap">
+                        <nav className="menu">
                             <div className="menu-left">
                                 <ul>
                                     <li className="has-child"><a href="#">Product</a></li>

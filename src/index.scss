@@ -107,7 +107,7 @@ header{
     font-weight: 600;
   }
 
-  .menu li.has-child a:after {
+  .menu li.has-child>a:after {
     content: ' ';
     width: 10px;
     background: no-repeat url(./images/icon-arrow-dark.svg);

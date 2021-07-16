@@ -17,83 +17,25 @@ const Header = () => {
     }
 
     const childMenuClicked = (e) => {
-        const a_parent =  document.querySelectorAll(".has-child");
-        const dd_menu_a = document.querySelectorAll(".dd_menu_a");
+        const a_parent =  document.querySelectorAll(".has-child")
         
-        e.target.setAttribute("aria-expanded", !openChildMenu)
-        
-
-        
-        a_parent.forEach((aitem) =>{
-            if(e.target.classList.contains('active')){
-                e.target.parentElement.classList.remove("active")
-                e.target.setAttribute("aria-expanded", "false")
-                console.log(e)
+        // Check if has active class or not
+        if(e.target.parentElement.classList.contains('active')){
+            e.target.parentElement.classList.remove("active")
+            e.target.setAttribute("aria-expanded", "false")
+        }else{
+            a_parent.forEach((aitem) =>{
+                aitem.classList.remove("active")
+                aitem.children[0].setAttribute("aria-expanded", "false")
                 
-            }else{
-                e.target.parentElement.classList.add("active")
-            e.target.setAttribute("aria-expanded", "true")
-            }
-            aitem.classList.remove("active")
-            aitem.children[0].setAttribute("aria-expanded", "false")
-            setOpenChildMenu(!openChildMenu)
+                if(e.target.parentElement.classList.contains(aitem.className)){
+                    e.target.parentElement.classList.add("active")
+                    e.target.setAttribute("aria-expanded", "true")
+                    e.preventDefault();
+                }   
+            })
             
-            
-            
-            
-            
-            
-           
-                
-            // if(e.target.parentElement.classList.contains('active')){
-            //     e.target.setAttribute("aria-expanded", "true")
-            // }else{
-            //     e.target.setAttribute("aria-expanded", "false")
-            //     e.target.parentElement.classList.remove("active")
-            // }
-
-            // if(e.target.getAttribute('aria-expanded')=== 'false'){
-                
-            // }
-            // a_parent.forEach((aitem) => {
-               
-                
-                
-                
-            // })
-            
-            
-                // aitem.addEventListener("click", function(){
-                    
-                //     // dd_menu_a.forEach(function(dd_menu_item){
-                //     //     dd_menu_item.classList.remove("active");
-                //     // })
-                //     // aitem.classList.add("active");
-                // })
-        })
-
-        // dd_menu_a.forEach(function(dd_menu_item){
-
-        //         dd_menu_item.addEventListener("click", function(){
-        //             dd_menu_a.forEach(function(dd_menu_item){
-        //                 dd_menu_item.classList.remove("active");
-        //             })
-        //             dd_menu_item.classList.add("active");
-        //         })
-        // })
-        // const menuChildOpen = document.querySelector('.has-child');
-        // if(e.target.parentElement.classList.contains('has-child')){
-        //     menuChildOpen.classList.toggle('active')
-        //     console.log('click')
-        // }
-        // console.log(e)
-        
-        
-        // menuOpen.forEach(child => {
-        //     child.classList.toggle('active')
-        //     setOpenChildMenu(!openChildMenu)
-        // });
-
+        }
         
     }
 
@@ -144,7 +86,7 @@ const Header = () => {
                             <div className="menu-right">
                                 <ul>
                                     <li><a href="#">Login</a></li>
-                                    <li><Button name='btn-light' title='Sign Up'/></li>
+                                    <li><Button name='btn-light btn-signup' title='Sign Up'/></li>
                                 </ul>
                             </div>
                         </nav>

@@ -24,7 +24,7 @@ $footer-bg: hsl(240, 10%, 16%);
 
 body {
   font-family: $font1;
-  font-size: 0.875rem;
+  font-size: 1rem;
   color: $body-copy;
   line-height: 1.65;
 }
@@ -79,18 +79,47 @@ header{
   }
 
   .menu-wrap{
-    display: none;
-    background:$neutral-color1;
-    border-radius:8px;
-    padding:35px 24px;
+    background: $neutral-color1;
+    border-radius: 8px;
+    max-height: 0;
+    overflow: hidden;
+    transition: all .7s ease;
+    width: 100%;
+    position: absolute;
+    top: 55px;
+    box-shadow: 0px 10px 15px $footer-text-color;
   }
 
   .menu-wrap.active{
-    display:block;
-    position:absolute;
-    width:100%;
-    left:0;
-    top: 55px;
+    display: block;
+    left: 0;
+    max-height: 1000px;
+  }
+
+  .menu{
+    padding: 35px 24px;
+  }
+
+  .menu-left{
+    margin-bottom: 23px;
+  }
+
+  .menu-right{
+    padding-top: 23px;
+    border-top: 1px solid $footer-text-color;
+
+    .btn-signup{
+      @include btn-clr(hsl(13, 100%, 72%), $neutral-color1);
+      background-image:linear-gradient(hsl(13, 100%, 72%), hsl(353, 100%, 62%));
+      padding: 10px 40px;
+      margin-top: 13px;
+      display: inline-block;
+    
+      &:hover{
+        @include btn-clr(hsl(13, 100%, 72%), $neutral-color1);
+        background-image: none;
+      }
+    }
   }
 
   .menu li{
@@ -100,7 +129,7 @@ header{
   }
   
   .menu li a{
-    display:inline-block;
+    display:block;
     padding:13px 0px;
     position:relative;
     color: $body-copy;
@@ -112,18 +141,34 @@ header{
     width: 10px;
     background: no-repeat url(./images/icon-arrow-dark.svg);
     position: absolute;
-    right: -15px;
     height: 7px;
     top: 21px;
+    margin-left: 10px;
   }
 
   .child-menu{
-    display: none;
+    overflow: hidden;
+    max-height: 0;
+    transition: .5s linear;
+    background: rgba($footer-text-color, .5);
   }
+
+  .has-child.active .child-menu{
+    max-height: 1000px;
+    border-radius: 8px;
+    padding: 13px;
+    height: auto;
+  }
+
+  .has-child.active a:after{
+    transform: rotate(180deg);
+  }
+
+  
 }
 
 .btn{
-  border-radius: 20px;
+  border-radius: 25px;
   border: 1px solid $neutral-color1;
   padding: 8px 15px;
   margin: 0 7px;
@@ -147,6 +192,8 @@ header{
     @include btn-clr($neutral-color1, $primary-color1 );
   }
 }
+
+
 
 .flex{
   display: flex;

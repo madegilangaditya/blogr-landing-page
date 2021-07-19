@@ -50,7 +50,7 @@ section{
 }
 
 header{
-  background: 35% 35%/350% no-repeat url(./images/bg-pattern-intro.svg), linear-gradient( #ff8f70, #ff3d54 );
+  background: 35% 35%/350% no-repeat url(./images/bg-pattern-intro.svg), linear-gradient( 90deg, #ff8f70, #ff3d54 );
   padding: 50px 20px 135px;
   border-bottom-left-radius: 90px;
 
@@ -98,6 +98,29 @@ header{
 
   .menu{
     padding: 35px 24px;
+
+    li{
+      list-style-type:none;
+      text-align:center;
+      
+      a{
+        display:block;
+        padding:13px 0px;
+        position:relative;
+        color: $body-copy;
+        font-weight: 600;
+      }
+    }
+
+    li.has-child>a:after {
+      content: ' ';
+      width: 10px;
+      background: no-repeat url(./images/icon-arrow-dark.svg);
+      position: absolute;
+      height: 7px;
+      top: 21px;
+      margin-left: 10px;
+    }
   }
 
   .menu-left{
@@ -120,30 +143,6 @@ header{
         background-image: none;
       }
     }
-  }
-
-  .menu li{
-    list-style-type:none;
-    text-align:center;
-  
-  }
-  
-  .menu li a{
-    display:block;
-    padding:13px 0px;
-    position:relative;
-    color: $body-copy;
-    font-weight: 600;
-  }
-
-  .menu li.has-child>a:after {
-    content: ' ';
-    width: 10px;
-    background: no-repeat url(./images/icon-arrow-dark.svg);
-    position: absolute;
-    height: 7px;
-    top: 21px;
-    margin-left: 10px;
   }
 
   .child-menu{
@@ -182,6 +181,7 @@ header{
 
   &:hover{
     @include btn-clr($primary-color2, $neutral-color1 );
+    border-color: transparent;
   }
 }
 
@@ -297,7 +297,83 @@ footer{
 }
 
 @media all and (min-width:800px){
+  .row{
+    max-width: 1110px;
+    margin: auto;
+  }
 
+  header{
+    background: 20% 50%/200% no-repeat url(./images/bg-pattern-intro.svg), linear-gradient(90deg,#ff8f70, #ff3d54);
+    
+    .logo-wrap{
+      max-width: 103px;
+    }
+
+    .flex{
+      justify-content: flex-start;
+      align-items: center;
+      gap: 60px;
+    }
+
+    .mobile-menu-icon{
+      display: none;
+    }
+
+    .menu-wrap{
+      position: relative;
+      top: 0;
+      max-height: inherit;
+      background: none;
+      box-shadow: none;
+      width: 85%;
+    }
+
+    .menu{
+      display: flex;
+      justify-content: space-between;
+      padding: 0;
+
+      li>a{
+        color: $neutral-color1;
+
+        &:hover{
+          text-decoration: underline;
+        }
+      }
+
+      li.has-child>a:after {
+        background: no-repeat url(./images/icon-arrow-light.svg);
+      }
+
+    }
+
+    .menu-left>ul,
+    .menu-right>ul{
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .menu-left{
+      margin-bottom: 0;
+    }
+
+    .menu-right{
+      padding-top: 0;
+      border-top: none;
+
+      .btn-signup{
+        background-image: initial;
+        margin-top: 0;
+        @include btn-clr($neutral-color1, $primary-color1 );
+
+        &:hover{
+          @include btn-clr($primary-color2, $neutral-color1 );
+          text-decoration: none;
+        }
+      }
+    }
+  }
   .section1{
     background-image: url(./images/illustration-editor-desktop.svg);
   }

@@ -7,7 +7,6 @@ import { useState } from 'react'
 
 const Header = () => {
     const [openMenu, setOpenMenu] = useState(false)
-    const [openChildMenu, setOpenChildMenu] = useState(false)
 
     const menuClicked = ()=>{
         const menuOpen = document.querySelector('.menu-wrap');
@@ -18,12 +17,14 @@ const Header = () => {
 
     const childMenuClicked = (e) => {
         const a_parent =  document.querySelectorAll(".has-child")
+        const bigDevice = window.matchMedia("(min-width:800px)")
+        // bigDevice.addListener(handleDeviceChange);
         
         // Check if has active class or not
         if(e.target.parentElement.classList.contains('active')){
             e.target.parentElement.classList.remove("active")
             e.target.setAttribute("aria-expanded", "false")
-        }else{
+        }else if(!bigDevice.matches){
             a_parent.forEach((aitem) =>{
                 aitem.classList.remove("active")
                 aitem.children[0].setAttribute("aria-expanded", "false")
@@ -36,6 +37,7 @@ const Header = () => {
             })
             
         }
+        console.log(bigDevice)
         
     }
 

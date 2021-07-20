@@ -326,6 +326,7 @@ footer{
       background: none;
       box-shadow: none;
       width: 85%;
+      overflow: visible;
     }
 
     .menu{
@@ -343,6 +344,39 @@ footer{
 
       li.has-child>a:after {
         background: no-repeat url(./images/icon-arrow-light.svg);
+      }
+
+      ul li.has-child:hover > .child-menu,
+      ul li.has-child:focus-within > ul,
+      ul li.has-child .child-menu:hover,
+      ul li.has-child .child-menu:focus {
+        visibility: visible;
+        display: block;
+        max-height:1000px;
+        padding: 25px;
+      }
+
+      li > ul.child-menu >li >a {
+        color: $body-copy;
+        text-align: left;
+        padding-bottom: 9px;
+        padding-top: 9px;
+
+        &:hover{
+          color: $footer-bg;
+          text-decoration: none;
+        }
+      }
+
+      .child-menu {
+        overflow: hidden;
+        transition: 0s linear;
+        background: #fff;
+        position:absolute;
+        min-width: 168px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 5px $footer-text-color;
+        transform: translateX(-26px);
       }
 
     }

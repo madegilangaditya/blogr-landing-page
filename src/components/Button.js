@@ -1,7 +1,7 @@
 const Button = ({name, title}) => {
     return (
         <>
-            <a href="#" className={`btn ${name}`}>{title}</a>
+            <a href="#a" className={`btn ${name}`}>{title}</a>
         </>
     )
 }

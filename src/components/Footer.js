@@ -10,28 +10,28 @@ const Footer = () => {
                 <div className="col">
                     <h4>Product</h4>
                     <ul>
-                        <li><a href="#">Overview</a></li>
-                        <li><a href="#">Pricing</a></li>
-                        <li><a href="#">Marketplace</a></li>
-                        <li><a href="#">Features</a></li>
-                        <li><a href="#">Integrations</a></li>
+                        <li><a href="#a">Overview</a></li>
+                        <li><a href="#a">Pricing</a></li>
+                        <li><a href="#a">Marketplace</a></li>
+                        <li><a href="#a">Features</a></li>
+                        <li><a href="#a">Integrations</a></li>
                     </ul>
                 </div>
                 <div className="col">
                     <h4>Company</h4>
                     <ul>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Team</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Careers</a></li>
+                        <li><a href="#a">About</a></li>
+                        <li><a href="#a">Team</a></li>
+                        <li><a href="#a">Blog</a></li>
+                        <li><a href="#a">Careers</a></li>
                     </ul>
                 </div>
                 <div className="col">
                     <h4>Connect</h4>
                     <ul>
-                        <li><a href="#">Contact</a></li>
-                        <li><a href="#">Newsletter</a></li>
-                        <li><a href="#">Linkedin</a></li>
+                        <li><a href="#a">Contact</a></li>
+                        <li><a href="#a">Newsletter</a></li>
+                        <li><a href="#a">Linkedin</a></li>
                     </ul>
                 </div>
             </div>

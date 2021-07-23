@@ -57,37 +57,37 @@ const Header = () => {
                         <nav className="menu" onClick={childMenuClicked}>
                             <div className="menu-left">
                                 <ul>
-                                    <li className="has-child" ><a href="#" aria-expanded="false">Product</a>
+                                    <li className="has-child" ><a href="#a" aria-expanded="false">Product</a>
                                         <ul className="child-menu">
-                                            <li><a href="#">Overview</a></li>
-                                            <li><a href="#">Pricing</a></li>
-                                            <li><a href="#">Marketplace</a></li>
-                                            <li><a href="#">Features</a></li>
-                                            <li><a href="#">Integrations</a></li>
+                                            <li><a href="#a">Overview</a></li>
+                                            <li><a href="#a">Pricing</a></li>
+                                            <li><a href="#a">Marketplace</a></li>
+                                            <li><a href="#a">Features</a></li>
+                                            <li><a href="#a">Integrations</a></li>
                                         </ul>
                                     </li>
                                         
-                                    <li className="has-child" ><a href="#" aria-expanded="false">Company</a>
+                                    <li className="has-child" ><a href="#a" aria-expanded="false">Company</a>
                                         <ul className="child-menu">
-                                            <li><a href="#">About</a></li>
-                                            <li><a href="#">Team</a></li>
-                                            <li><a href="#">Blog</a></li>
-                                            <li><a href="#">Careers</a></li>
+                                            <li><a href="#a">About</a></li>
+                                            <li><a href="#a">Team</a></li>
+                                            <li><a href="#a">Blog</a></li>
+                                            <li><a href="#a">Careers</a></li>
                                         </ul>
                                     </li>
                                         
-                                    <li className="has-child" ><a href="#">Connect</a>
+                                    <li className="has-child" ><a href="#a">Connect</a>
                                         <ul className="child-menu">
-                                            <li><a href="#">Contact</a></li>
-                                            <li><a href="#">Newsletter</a></li>
-                                            <li><a href="#">LinkedIn</a></li>
+                                            <li><a href="#a">Contact</a></li>
+                                            <li><a href="#a">Newsletter</a></li>
+                                            <li><a href="#a">LinkedIn</a></li>
                                         </ul>
                                     </li>
                                 </ul>
                             </div>
                             <div className="menu-right">
                                 <ul>
-                                    <li><a href="#">Login</a></li>
+                                    <li><a href="#a">Login</a></li>
                                     <li><Button name='btn-light btn-signup' title='Sign Up'/></li>
                                 </ul>
                             </div>

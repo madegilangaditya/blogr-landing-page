@@ -37,7 +37,7 @@ const Header = () => {
             })
             
         }
-        console.log(bigDevice)
+        console.log(e.target.parentElement)
         
     }
 
